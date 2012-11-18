@@ -12,7 +12,5 @@ describe 'main application' do
     last_response.should be_ok
   end
 
-  specify 'should have more specs' do
-    pending
-  end
+
 end
