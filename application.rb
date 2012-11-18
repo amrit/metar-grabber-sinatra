@@ -32,7 +32,9 @@ post '/result' do
 
   station = Metar::Station.find_by_cccc( @code )
 
-  @result = station.report.to_s
+  parser = station.parser
+
+  @result = parser.raw
 
 
 
