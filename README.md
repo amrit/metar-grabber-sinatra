@@ -12,11 +12,13 @@ Note: Only airports with METAR reporting are supported
 Built with:
 
 * Sinatra
+* sinatra-template
 * ruby-parser
 * RSpec
 * Validatious.js
 * Haml
 * CSS
+
 
 
 
