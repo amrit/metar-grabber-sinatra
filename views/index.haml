@@ -9,6 +9,7 @@
     /
       Basic Page Needs
       \==================================================
+
     %meta{:charset => "utf-8"}
       %title Metar Grabber
       %meta{:content => "", :name => "description"}
@@ -20,32 +21,42 @@
             /
               CSS
               \==================================================
+
             %link{:href => "css/base.css", :rel => "stylesheet"}
               %link{:href => "css/skeleton.css", :rel => "stylesheet"}
                 %link{:href => "css/layout.css", :rel => "stylesheet"}
+                  %link{:href => "css/custom.css", :rel => "stylesheet"}
                   /[if lt IE 9]
                     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
                   /
-                    Favicons
-                    \==================================================
+
+
                   %link{:href => "images/favicon.ico", :rel => "shortcut icon"}
                     %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}
                       %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}
                         %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}
+
+  <script type="text/javascript" src="js/validatious.js"></script>
   %body
     /
       Primary Page Layout
       \==================================================
     / Delete everything in this .container and get started on your own site!
     .container
-      %h1 Metar Grabber!
 
-      %p Enter an ICAO code below to receive the latest raw METAR for that airport.
+      %h1 Metar Grabber
 
-      %form{:action => '/result', :method=>'post'}
-        %label{:for => "regularInput"} Code
-        %input#regularInput{:type => "text", :name => "code", :id => "code"}/
-        %button{:type => "submit"} Submit Form
+      .content
+
+        %p Enter an ICAO code below to receive the latest raw METAR for that airport.
+
+        %form{:action => '/', :method=>'post', :class => 'validate'}
+          %label{:for => "code"} Code
+          %input#code{:type => "text", :name => "code", :class => 'required alpha'}/
+          %button{:type => "submit"} Submit Form
+
+
+        %pre= @result
 
 
 

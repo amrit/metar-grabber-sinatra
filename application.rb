@@ -26,7 +26,7 @@ get '/' do
   haml :index
 end
 
-post '/result' do
+post '/' do
 
   @code = params["code"].upcase!
 
@@ -43,7 +43,7 @@ post '/result' do
 
 
 
-  haml :result
+  haml :index
 
 end
 
